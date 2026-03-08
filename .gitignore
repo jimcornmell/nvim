@@ -1,0 +1,12 @@
+# Original from LazyVim/starter
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+# Mine
+snippetformatted
+lazy-lock.json

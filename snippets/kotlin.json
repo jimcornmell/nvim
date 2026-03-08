@@ -1,0 +1,24 @@
+{
+  "Test": {
+    "body": [
+      "@Test",
+      "fun `$0 should Y`() {",
+      "    // Given",
+      "",
+      "    // When",
+      "",
+      "    // Then",
+      "}"
+    ],
+    "description": "Kotline test",
+    "prefix": "__test"
+  },
+  "log": {
+    "body": [
+      "private val logger = io.github.oshai.kotlinlogging.KotlinLogging.logger {}",
+      "$0"
+    ],
+    "description": "Logging kotlin",
+    "prefix": "__log"
+  }
+}

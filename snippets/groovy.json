@@ -1,0 +1,66 @@
+{
+  "spocktest": {
+    "body": [
+      "// import org.springframework.boot.test.web.server.LocalServerPort",
+      "",
+      "// @LocalServerPort",
+      "// private int port",
+      "// def userDTO = [login: \"\", password: \"password\"]",
+      "// def url = \"http://localhost:\\${port}/authenticate\"",
+      "",
+      "$0",
+      "def \"Name #variable\"() {",
+      "    given:",
+      "        Map<String, Object> settings = [:]",
+      "",
+      "    expect:",
+      "        DataRequest dataRequest = new DataRequest([",
+      "                title   : rank, firstname: fname, middlename: mname, surname: sname",
+      "        ])",
+      "        dataRequest.setIdScreenRequest(new IdScreenRequest(phone, ip))",
+      "",
+      "    when:",
+      "        validateUser(user)",
+      "",
+      "    then:",
+      "        def error = thrown(expectedException)",
+      "        error.message == expectedMessage",
+      "",
+      "    where:",
+      "        rank   | fname  | mname   | sname       || expectedErrorName | expectedErrorString",
+      "        // _______________________ Valid data ____________________",
+      "        \"Dr\"   | \"Neil\" | \"Alden\" | \"Armstrong\" || null              | null",
+      "        \"Mr\"   | \"Neil\" | \"Alden\" | \"Armstrong\" || null              | null",
+      "}"
+    ],
+    "description": "New Spock test",
+    "prefix": "__spocktest"
+  },
+  "switch": {
+    "body": [
+      "switch (x) {",
+      "    case Integer:",
+      "        result = \"integer\"",
+      "        break",
+      "    default:",
+      "        result = \"default\"",
+      "}",
+      "$0"
+    ],
+    "description": "Switch",
+    "prefix": "switch"
+  },
+  "switch_assign": {
+    "body": [
+      "def partner = switch(person) {",
+      "    case 'Romeo'  -> 'Juliet'",
+      "    case 'Adam'   -> 'Eve'",
+      "    case 'Antony' -> 'Cleopatra'",
+      "    case 'Bonnie' -> 'Clyde'",
+      "}",
+      "$0"
+    ],
+    "description": "Switch Assignment",
+    "prefix": "switch_assign"
+  }
+}

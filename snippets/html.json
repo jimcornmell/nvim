@@ -1,0 +1,10 @@
+{
+  "favicon": {
+    "body": [
+      "<link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">",
+      "$0"
+    ],
+    "description": "Favicon",
+    "prefix": "favicon"
+  }
+}
