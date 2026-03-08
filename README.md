@@ -10,8 +10,8 @@
 
 <!-- Introduction -->
 This is a set of config files for the **brilliant** configuration project
-[lazyvim](https://www.lazyvim.org) been using
-VI on and off as my daily editor since the early 1990's and
+[lazyvim](https://www.lazyvim.org).  I've been using
+VI on and off as my daily editor since the 1980's and
 this setup is the best I've seen so I've just plagiarized it and added a
 few of my own twists.
 
