@@ -11,7 +11,7 @@
     <div class="item-grid">
     <div class="container page-title" role="main">
         <h1>VIM Cheatsheet</h1>
-        <h2>The following are a mixture of standard key bindings and my own, which I find useful like <kbd>Q</kbd>, <kbd>g</kbd><kbd>j</kbd>, <kbd>Alt</kbd>-<kbd>Up</kbd> etc. I've marked mine and other non-default (from plugins) key-bindings with <img src="media/tick.png" alt="tick"/> in the table below.</h2>
+        <h2>The following are a mixture of standard key bindings and my own, which I find useful like <kbd>Q</kbd>, <kbd>g</kbd><kbd>j</kbd>, <kbd>Alt</kbd>-<kbd>Up</kbd> etc. I've marked mine and other non-default (from plugins) key-bindings with <img src="media/tick.png" alt="tick"/> in the table below.  For most key-bindings use LazyVim's built in menu tool, its really usefil, for example just hit the space bar in NORMAL mode and a menu will appear in the bottom right.</h2>
     </div>
 <div>
     <div class="outer-grid">
@@ -22,7 +22,6 @@
                     <tr><th><kbd>F1</kbd></th><td>Open this cheatsheet <img src="media/star.png" alt="star"/></td></tr>
                     <tr><th><kbd>F2</kbd></th><td>Cycle through different folding methods <img src="media/star.png" alt="star"/></td></tr>
                     <tr><th><kbd>F3</kbd></th><td>Toggle most visual items <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>F4</kbd></th><td>Open left file menu <img src="media/star.png" alt="star"/></td></tr>
                     <tr><th><kbd>F5</kbd></th><td>Kitty command - assumes text highlighted is a filename and opens it <img src="media/star.png" alt="star"/></td></tr>
                     <tr><th><kbd>F6</kbd></th><td>Runs the last range substitute, see * and & <img src="media/star.png" alt="star"/></td></tr>
                     <tr><th><kbd>F7</kbd></th><td>Diff current buffer and next (split and windo diffthis) <img src="media/star.png" alt="star"/></td></tr>
@@ -78,18 +77,7 @@
             <h2>Jumping </h2>
             <table>
                 <tbody>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>a</kbd></th><td>Jump to artifact in Artifactory/jFrog <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>c</kbd></th><td>Jump to Jenkins <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>e</kbd></th><td>Jump to reports <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>h</kbd></th><td>Open help page <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>i</kbd></th><td>Jump to live Rundeck job <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>j</kbd></th><td>Same as gj <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>l</kbd></th><td>Jump to Lint output, SonarQube <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>m</kbd></th><td>Open manual page <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>n</kbd></th><td>Jump to notes <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>r</kbd></th><td>Jump to repository <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>s</kbd></th><td>Show jira information <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>t</kbd></th><td>Jump to ticket <img src="media/star.png" alt="star"/></td></tr>
+                    <tr><th><kbd>g</kbd><kbd>j</kbd></th><td>Intelligent jump, looks at text under cursor and jumps accordingly<img src="media/star.png" alt="star"/></td></tr>
                 </tbody>
             </table>
         </div>
@@ -146,14 +134,13 @@
             <h2>Snippets, Colours, Chars </h2>
             <table>
                 <tbody>
-                    <tr><th><kbd>s</kbd><kbd>s</kbd></th><td>Snippet save (last yanked text, in reg ")</td></tr>
-                    <tr><th><kbd>s</kbd><kbd>e</kbd></th><td>Snippet Edit</td></tr>
-                    <tr><th><kbd>s</kbd><kbd>l</kbd></th><td>Snippet List Available</td></tr>
-                    <tr><th><kbd>s</kbd><kbd>L</kbd></th><td>Snippet List Available Long</td></tr>
+                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>s</kbd></th><td>Snippet save (last yanked text, in reg ")</td></tr>
+                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>e</kbd></th><td>Snippet Edit</td></tr>
+                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>E</kbd></th><td>Snippet Edit all langs snippet file</td></tr>
+                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>l</kbd></th><td>Snippet List Available</td></tr>
+                    <tr><th><kbd>leader</kbd><kbd>j</kbd><kbd>L</kbd></th><td>Snippet List Available Long</td></tr>
                     <tr><th></th><td>Snippet location</td></tr>
-                    <tr><th></th><td><kbd class="cmd">~/.config/lvim/snippets/</kbd></td></tr>
-                    <tr><th><kbd>s</kbd><kbd>c</kbd></th><td>Show colours</td></tr>
-                    <tr><th><kbd>s</kbd><kbd>C</kbd></th><td>Show chars</td></tr>
+                    <tr><th></th><td><kbd class="cmd">~/.config/nvim/snippets/</kbd></td></tr>
                 </tbody>
             </table>
         </div>
@@ -239,7 +226,6 @@
                     <tr><th><kbd>m</kbd><kbd>x</kbd></th><td>Toggle mark <kbd>x</kbd></td></tr>
                     <tr><th><kbd>'</kbd><kbd>x</kbd>, <kbd>`</kbd><kbd>x</kbd></th><td>Goto to mark <kbd class="cmd">x</kbd> (a-z), '=start of line, `=end</td></tr>
                     <tr><th><kbd>m</kbd><kbd>X</kbd></th><td>Set GLOBAL mark <kbd class="cmd">X</kbd> (A-Z), i.e. a mark in another file</td></tr>
-                    <tr><th><kbd class="cmd">:Telescope marks</kbd></th><td>List marks, select and jump</td></tr>
                     <tr><th><kbd class="cmd">:marks</kbd></th><td>List marks</td></tr>
                     <tr><th><kbd class="cmd">:'x,'y s/foo/bar/g</kbd></th><td>Replace between marks <kbd class="cmd">x</kbd> and <kbd class="cmd">y</kbd></td></tr>
                     <tr><th><kbd class="cmd">:'<,'> s/foo/bar/g</kbd></th><td>Replace between selected text</td></tr>
@@ -321,6 +307,7 @@
                     <tr><th><kbd>g</kbd><kbd>g</kbd><kbd>=</kbd><kbd>G</kbd></th><td>Auto (re)indent entire document</td></tr>
                     <tr><th><kbd>=</kbd></th><td>(re)indent the text on the current line or on the area selected (SUPER)</td></tr>
                     <tr><th><kbd>=</kbd><kbd>%</kbd></th><td>(re)indent the current braces { ... }</td></tr>
+                    <tr><th><kbd>g</kbd><kbd>F</kbd></th><td>Format paragraph <img src="media/star.png" alt="star"/></td></tr>
                 </tbody>
             </table>
         </div>
@@ -335,7 +322,6 @@
                     <tr><th><kbd>g</kbd><kbd>~</kbd><kbd>[motion]</kbd></th><td>Togglecase</td></tr>
                     <tr><th><kbd>g</kbd><kbd>u</kbd><kbd>[motion]</kbd></th><td>Lowercase</td></tr>
                     <tr><th><kbd>g</kbd><kbd>U</kbd><kbd>[motion]</kbd></th><td>Uppercase</td></tr>
-<kbd class="cmd">:%s/\v(\a+)/\u\1/g</kbd> Title Case regex, \u,\l=Upper/lower next char, \U,\L=Up/Low following chars<br/><kbd class="cmd">:%s/\v(\w)_(\a+)/\1\u\2/g</kbd> Change <kbd class="cmd">variable_name</kbd> to camel case, <kbd class="cmd">variableName</kbd>
                 </tbody>
             </table>
         </div>
@@ -343,10 +329,9 @@
             <h2>Increment/Dec a value <a target="_new" href="https://github.com/tpope/vim-speeddating">plugin</a></h2>
             <table>
                 <tbody>
-                    <tr><th><kbd><img src="media/ctrl.png" alt="Ctrl"/></kbd>-<kbd>]</kbd></th><td>Increment value under cursor by 1.  Also works with Dates/times. <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd><img src="media/ctrl.png" alt="Ctrl"/></kbd>-<kbd>[</kbd></th><td>Decrement value under cursor by 1. <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd><img src="media/ctrl.png" alt="Ctrl"/></kbd>-<kbd>h</kbd></th><td>In visual block mode insert sequence starting at count, defaults to 1 <img src="media/star.png" alt="star"/></td></tr>
-A query to increment value in whole file<br/><kbd class="cmd">:let i=1 | g/foo/s//\=i/ | let i=i+1</kbd><br/>For example:<br/><kbd class="cmd">:let i=1 | g/foo/s//\="morestuff".i."morestuff"/ | let i=i+1</kbd><br/><kbd class="cmd">:let i=1 | g/WEEKNUMBER/s//\=i/ | let i=i+1</kbd>
+                    <tr><th><kbd><img src="media/ctrl.png" alt="Ctrl"/></kbd>-<kbd>.</kbd></th><td>Increment value under cursor by 1.  Also works with Dates/times. <img src="media/star.png" alt="star"/></td></tr>
+                    <tr><th><kbd><img src="media/ctrl.png" alt="Ctrl"/></kbd>-<kbd>,</kbd></th><td>Decrement value under cursor by 1. <img src="media/star.png" alt="star"/></td></tr>
+                    <tr><th><kbd>leader</kbd>-<kbd>I</kbd></th><td>In visual block mode insert sequence starting at count, defaults to start=1, increment=1 <img src="media/star.png" alt="star"/></td></tr>
                 </tbody>
             </table>
         </div>
@@ -363,8 +348,9 @@ A query to increment value in whole file<br/><kbd class="cmd">:let i=1 | g/foo/s
             <h2>Executing lines/commands </h2>
             <table>
                 <tbody>
-                    <tr><th><kbd>g</kbd><kbd>r</kbd></th><td>Run line under cursor in shell, <i>USE WITH CARE!</i> <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd>g</kbd><kbd>t</kbd></th><td>Run line under cursor as if it were a vim command <img src="media/star.png" alt="star"/></td></tr>
+                    <tr><th><kbd>g</kbd><kbd>R</kbd></th><td>Run line under cursor in shell, <i>USE WITH CARE!</i> <img src="media/star.png" alt="star"/></td></tr>
+                    <tr><th><kbd>g</kbd><kbd>V</kbd></th><td>Run line under cursor as if it were a VIM command <img src="media/star.png" alt="star"/></td></tr>
+                    <tr><th><kbd>g</kbd><kbd>L</kbd></th><td>Run line under cursor as if it were a LUA command <img src="media/star.png" alt="star"/></td></tr>
                     <tr><th><kbd><img src="media/alt.png" alt="Alt"/></kbd>-<kbd>r</kbd></th><td>Run the current file <img src="media/star.png" alt="star"/></td></tr>
                     <tr><th><kbd><img src="media/alt.png" alt="Alt"/></kbd>-<kbd>e</kbd></th><td>Make the current file executable <kbd class="cmd">chmod a+x file</kbd><br/>The Eunuch plugin also makes files starting with <kbd class="cmd">#!</kbd> executable <img src="media/star.png" alt="star"/></td></tr>
                     <tr><th><kbd class="cmd">:g/^Foo/norm 0xxxBar</kbd></th><td>Norm runs commands as if you typed them</td></tr>
@@ -393,7 +379,7 @@ A query to increment value in whole file<br/><kbd class="cmd">:let i=1 | g/foo/s
                     <tr><th><kbd class="cmd">:v/pattern/[command]</kbd></th><td>Like :g but finds NON-matching lines</td></tr>
                     <tr><th><kbd class="cmd">:g/foobar/y A</kbd></th><td>Yank all lines matching <kbd class="cmd">foobar</kbd> into copy buffer</td></tr>
                     <tr><th><kbd><img src="media/ctrl.png" alt="Ctrl"/></kbd>-<kbd>l</kbd></th><td>Redraws the screen and removes any search highlighting <img src="media/star.png" alt="star"/></td></tr>
-                    <tr><th><kbd><img src="media/alt.png" alt="Alt"/></kbd>-<kbd>p</kbd></th><td>Pushes words to right to align with line above <img src="media/star.png" alt="star"/></td></tr>
+                    <tr><th><kbd><img src="media/alt.png" alt="Alt"/></kbd>-<kbd>P</kbd></th><td>Pushes words to right to align with line above <img src="media/star.png" alt="star"/></td></tr>
                     <tr><th><kbd>g</kbd><kbd>B</kbd></th><td>Converts (and replaces) currentline to a banner, which is commented out gB=go banner</td></tr>
                 </tbody>
             </table>
