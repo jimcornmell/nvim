@@ -35,10 +35,10 @@ keymap("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous tab" .. hiC, silent 
 keymap("n", "<C-/>", "gccj", { remap = true, silent = true, desc = "Toggle comment and move to next line" .. hiC })
 
 --Turn off relative numbers
-keymap("n", "<leader>N", ":set norelativenumber<CR>", { silent = true, desc = "No relative number" .. hiC })
+keymap("n", "<leader>A", ":set norelativenumber<CR>", { silent = true, desc = "Absolute line numbers" .. hiC })
 
 --Turn on relative numbers
-keymap("n", "<leader>R", ":set relativenumber<CR>", { silent = true, desc = "Relative numbers" .. hiC })
+keymap("n", "<leader>R", ":set relativenumber<CR>", { silent = true, desc = "Relative line numbers" .. hiC })
 
 --Quit.
 keymap("n", "<C-q>", ":q<CR>", { desc = "Quit" .. hiC })
@@ -156,7 +156,7 @@ keymap("n", "<A-e>", function()
     local path = vim.fn.expand("%:p")
     vim.fn.system("touch " .. vim.fn.shellescape(path) .. " && chmod a+x " .. vim.fn.shellescape(path))
     vim.notify("File is now executable! chmod a+x", vim.log.levels.INFO)
-end, { silent = true, desc = "Make current buffer evecutable" .. hiC })
+end, { silent = true, desc = "Make current buffer executable" .. hiC })
 
 -- -------------------------------------------------------------------------- --
 

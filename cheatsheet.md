@@ -1,5 +1,5 @@
 # TITLE=VIM Cheatsheet
-# NOTE=The following are a mixture of standard key bindings and my own, which I find useful like <kbd>Q</kbd>, <kbd>g</kbd><kbd>j</kbd>, <kbd>Alt</kbd>-<kbd>Up</kbd> etc. I've marked mine and other non-default (from plugins) key-bindings with :tick: in the table below.
+# NOTE=The following are a mixture of standard key bindings and my own, which I find useful like <kbd>Q</kbd>, <kbd>g</kbd><kbd>j</kbd>, <kbd>Alt</kbd>-<kbd>Up</kbd> etc. I've marked mine and other non-default (from plugins) key-bindings with :tick: in the table below.  For most key-bindings use LazyVim's built in menu tool, its really usefil, for example just hit the space bar in NORMAL mode and a menu will appear in the bottom right.
 
 # |__Help__|[`:h topic`](https://neovim.io/doc/user/usr_02.html#02.8)|
 # |`:h quickref`|                                                                Quick reference|
@@ -85,18 +85,7 @@
 |<kbd>y</kbd><kbd>s</kbd><kbd>s</kbd><kbd>"</kbd>|                             Whole-Line to "Whole-Line" :star: |
 
 |__Jumping__||
-|<kbd>leader</kbd><kbd>j</kbd><kbd>a</kbd>|                                    Jump to artifact in Artifactory/jFrog :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>c</kbd>|                                    Jump to Jenkins :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>e</kbd>|                                    Jump to reports :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>h</kbd>|                                    Open help page :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>i</kbd>|                                    Jump to live Rundeck job :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>j</kbd>|                                    Same as gj :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>l</kbd>|                                    Jump to Lint output, SonarQube :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>m</kbd>|                                    Open manual page :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>n</kbd>|                                    Jump to notes :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>r</kbd>|                                    Jump to repository :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>s</kbd>|                                    Show jira information :star: |
-|<kbd>leader</kbd><kbd>j</kbd><kbd>t</kbd>|                                    Jump to ticket :star: |
+|<kbd>g</kbd><kbd>j</kbd>|                                                     Intelligent jump, looks at text under cursor and jumps accordingly:star: |
 
 |__Insert Mode__|[`:h inserting`](https://neovim.io/doc/user/insert.html#Insert)|
 #|<kbd>ESC</kbd>|                                                               Exit insert mode|
@@ -137,14 +126,13 @@
 |`:s/\%Vfoo/bar/g`|                                                            Match only within visual selection with \%V|
 
 |__Snippets, Colours, Chars__||
-|<kbd>s</kbd><kbd>s</kbd>|                                                     Snippet save (last yanked text, in reg ")|
-|<kbd>s</kbd><kbd>e</kbd>|                                                     Snippet Edit|
-|<kbd>s</kbd><kbd>l</kbd>|                                                     Snippet List Available|
-|<kbd>s</kbd><kbd>L</kbd>|                                                     Snippet List Available Long|
+|<kbd>leader</kbd><kbd>j</kbd><kbd>s</kbd>|                                                     Snippet save (last yanked text, in reg ")|
+|<kbd>leader</kbd><kbd>j</kbd><kbd>e</kbd>|                                                     Snippet Edit|
+|<kbd>leader</kbd><kbd>j</kbd><kbd>E</kbd>|                                                     Snippet Edit all langs snippet file|
+|<kbd>leader</kbd><kbd>j</kbd><kbd>l</kbd>|                                                     Snippet List Available|
+|<kbd>leader</kbd><kbd>j</kbd><kbd>L</kbd>|                                                     Snippet List Available Long|
 ||                                                                             Snippet location|
-||                                                                             `~/.config/lvim/snippets/`|
-|<kbd>s</kbd><kbd>c</kbd>|                                                     Show colours|
-|<kbd>s</kbd><kbd>C</kbd>|                                                     Show chars|
+||                                                                             `~/.config/nvim/snippets/`|
 
 |__Range Actions__||
 |`:[range]d`|                                                                  Delete range|
@@ -210,7 +198,6 @@
 |<kbd>m</kbd><kbd>x</kbd>|                                                     Toggle mark <kbd>x</kbd>|
 |<kbd>'</kbd><kbd>x</kbd>, <kbd>`</kbd><kbd>x</kbd>|                           Goto to mark `x` (a-z), '=start of line, `=end|
 |<kbd>m</kbd><kbd>X</kbd>|                                                     Set GLOBAL mark `X` (A-Z), i.e. a mark in another file|
-|`:Telescope marks`|                                                           List marks, select and jump|
 |`:marks`|                                                                     List marks|
 |`:'x,'y s/foo/bar/g`|                                                         Replace between marks `x` and `y`|
 |`:'<,'> s/foo/bar/g`|                                                         Replace between selected text|
@@ -267,6 +254,7 @@
 |<kbd>g</kbd><kbd>g</kbd><kbd>=</kbd><kbd>G</kbd>|                             Auto (re)indent entire document|
 |<kbd>=</kbd>|                                                                 (re)indent the text on the current line or on the area selected (SUPER)|
 |<kbd>=</kbd><kbd>%</kbd>|                                                     (re)indent the current braces { ... }|
+|<kbd>g</kbd><kbd>F</kbd>|                                                            Format paragraph :star: |
 
 |__Changing case__|[`:h case`](https://neovim.io/doc/user/change.html#case)|
 |<kbd>~</kbd>|                                                                 Toggle case|
@@ -276,15 +264,15 @@
 |<kbd>g</kbd><kbd>~</kbd><kbd>[motion]</kbd>|                                  Togglecase|
 |<kbd>g</kbd><kbd>u</kbd><kbd>[motion]</kbd>|                                  Lowercase|
 |<kbd>g</kbd><kbd>U</kbd><kbd>[motion]</kbd>|                                  Uppercase|
-`:%s/\v(\a+)/\u\1/g` Title Case regex, \u,\l=Upper/lower next char, \U,\L=Up/Low following chars<br/>`:%s/\v(\w)_(\a+)/\1\u\2/g` Change `variable_name` to camel case, `variableName`
+# `:%s/\v(\a+)/\u\1/g` Title Case regex, \u,\l=Upper/lower next char, \U,\L=Up/Low following chars<br/>`:%s/\v(\w)_(\a+)/\1\u\2/g` Change `variable_name` to camel case, `variableName`
 
 |__Increment/Dec a value__|[plugin](https://github.com/tpope/vim-speeddating)|
 |<kbd>Ctrl</kbd>-<kbd>.</kbd>|                                                            Increment value under cursor by 1.  Also works with Dates/times. :star: |
 |<kbd>Ctrl</kbd>-<kbd>,</kbd>|                                                            Decrement value under cursor by 1. :star: |
-|<kbd> </kbd>-<kbd>I</kbd>|                                                            In visual block mode insert sequence starting at count, defaults to start=1, increment=1 :star: |
+|<kbd>leader</kbd>-<kbd>I</kbd>|                                                            In visual block mode insert sequence starting at count, defaults to start=1, increment=1 :star: |
 #|<kbd>Ctrl</kbd>-<kbd>j</kbd>|                                                            In visual block mode increment sequence :star: |
 #|<kbd>Ctrl</kbd>-<kbd>k</kbd>|                                                            In visual block mode decrement sequence :star: |
-A query to increment value in whole file<br/>`:let i=1 \| g/foo/s//\=i/ \| let i=i+1`<br/>For example:<br/>`:let i=1 \| g/foo/s//\="morestuff".i."morestuff"/ \| let i=i+1`<br/>`:let i=1 \| g/WEEKNUMBER/s//\=i/ \| let i=i+1`
+# A query to increment value in whole file<br/>`:let i=1 \| g/foo/s//\=i/ \| let i=i+1`<br/>For example:<br/>`:let i=1 \| g/foo/s//\="morestuff".i."morestuff"/ \| let i=i+1`<br/>`:let i=1 \| g/WEEKNUMBER/s//\=i/ \| let i=i+1`
 
 |__Moving Lines__||
 |<kbd>Alt</kbd>-<kbd>Up</kbd>|                                                            Move current line/selection up 1 line :star: |
@@ -292,7 +280,8 @@ A query to increment value in whole file<br/>`:let i=1 \| g/foo/s//\=i/ \| let i
 
 |__Executing lines/commands__||
 |<kbd>g</kbd><kbd>R</kbd>|                                                     Run line under cursor in shell, **USE WITH CARE!** :star: |
-|<kbd>g</kbd><kbd>t</kbd>|                                                     Run line under cursor as if it were a vim command :star: |
+|<kbd>g</kbd><kbd>V</kbd>|                                                     Run line under cursor as if it were a VIM command :star: |
+|<kbd>g</kbd><kbd>L</kbd>|                                                     Run line under cursor as if it were a LUA command :star: |
 |<kbd>Alt</kbd>-<kbd>r</kbd>|                                                             Run the current file :star: |
 |<kbd>Alt</kbd>-<kbd>e</kbd>|                                                             Make the current file executable `chmod a+x file`<br/>The Eunuch plugin also makes files starting with `#!` executable :star: |
 |`:g/^Foo/norm 0xxxBar`|                                                       Norm runs commands as if you typed them|
