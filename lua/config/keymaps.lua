@@ -34,11 +34,11 @@ keymap("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous tab" .. hiC, silent 
 --Toggle comment and move to next line, or comment selection.
 keymap("n", "<C-/>", "gccj", { remap = true, silent = true, desc = "Toggle comment and move to next line" .. hiC })
 
---Turn off relative numbers
-keymap("n", "<leader>A", ":set norelativenumber<CR>", { silent = true, desc = "Absolute line numbers" .. hiC })
+--Toggle relative numbers
+keymap("n", "<leader>r", ":set relativenumber!<CR>", { silent = true, desc = "Toggle relative line numbers" .. hiC })
 
---Turn on relative numbers
-keymap("n", "<leader>R", ":set relativenumber<CR>", { silent = true, desc = "Relative line numbers" .. hiC })
+--Toggle numbers
+keymap("n", "<leader>a", ":set number!<CR>", { silent = true, desc = "Toggle line numbers" .. hiC })
 
 --Quit.
 keymap("n", "<C-q>", ":q<CR>", { desc = "Quit" .. hiC })
