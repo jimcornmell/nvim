@@ -46,6 +46,25 @@ autocmd("CursorMoved", {
     end,
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = {
+        "*bashrc*.tmpl",
+        "*bash_profile*.tmpl",
+        "*bash_aliases*.tmpl",
+        "*zshrc*.tmpl",
+        "*zshrc_profile*.tmpl",
+        "*zsh_aliases*.tmpl",
+    },
+
+    callback = function()
+        vim.b.chezmoi_template = true
+        vim.bo.filetype = "bash"
+
+        -- Disable LSP and linter diagnostics for chezmoi templates
+        vim.diagnostic.enable(false, { bufnr = 0 })
+    end,
+})
+
 --                                  ____              _                __ _ _                                          --
 --                                 / ___| _   _ _ __ | |_ __ ___  __  / _(_) | ___  ___                                --
 --                                 \___ \| | | | '_ \| __/ _` \ \/ / | |_| | |/ _ \/ __|                               --
